@@ -1,0 +1,35 @@
+<%= form_for [refinery, :projectors_admin, @projector] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @projector,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest'  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :page -%>
+    <%= f.text_field :page  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :zoom -%>
+    <%= f.number_field :zoom  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :position -%>
+    <%= f.number_field :position  -%>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.projectors.admin.projectors.projector'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @projector.name) %>
+<% end -%>

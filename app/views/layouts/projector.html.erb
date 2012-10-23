@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<%= render :partial => '/refinery/html_tag' %>
+  <% site_bar = render(:partial => '/refinery/site_bar', :locals => {:head => true}) -%>
+  <%= render :partial => '/refinery/head' %>
+  <body>
+    <%= site_bar -%>
+    <div class="container">
+      <div class="content">
+        <div class="row">
+          <div class="span11">
+            <%= yield %>
+          </div>
+          <div class="span1">&nbsp;</div>
+        </div>
+        <footer>
+          <%= render :partial => '/refinery/footer' -%>
+        </footer>
+      </div>
+    </div>
+    <%= render :partial => '/refinery/javascripts' %>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<div class="line-numbers">
+  <% for i in 1..1000 do %>
+    <% if @projector.position == i %>
+      <span id="projector" class="line-number">&nbsp;</span>
+    <% else %>
+      <span id="line<%= i %>" class="line-number">&nbsp;</span>
+    <% end %>
+  <% end %>
+</div>
+
+<%= content_for :stylesheets, stylesheet_link_tag('projector') %>
+<%= content_for :stylesheets do %>
+  <style type="text/css">
+    body, h1, h2, h3, h4, h5, h6 {
+      font-size: <%= @projector.zoom * 10 %>%;
+      line-height: <%= @projector.zoom * 10 %>%;
+    }
+  </style>
+<% end %>
+<%= content_for :meta do %>
+  <meta http-equiv="refresh" content="5" url="<%= refinery.projectors_projector_path(@projector, :anchor => "projector")  %> " />
+<% end %>
+<%= render '/refinery/content_page' %>

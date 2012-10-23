@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="projectors">
+    <% @projectors.each do |projector| %>
+      <li>
+        <%= link_to projector.name, refinery.projectors_projector_path(projector, :anchor => 'projector') %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

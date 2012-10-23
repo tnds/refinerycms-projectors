@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      projectors:
+        title: Projectors
+#        article: masculino/femenino
+    projectors:
+      admin:
+        projectors:
+          actions:
+            create_new: Crear nuevo projector
+            reorder: Reordenar projectors
+            reorder_done: Reordenación de projectors completada
+          records:
+            title: Projectors
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay projectors todavía. Pulsa en "Crear nuevo Projector" para crear tu primer projector.
+          projector:
+            view_live_html: Ver este projector como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este projector
+            delete: Borrar este projector para siempre
+      projectors:
+        show:
+          other: Otros projectors
+  activerecord:
+    attributes:
+      'refinery/projectors/projector':
+        name: Name
+        page: Page
+        zoom: Zoom
+        position: Position

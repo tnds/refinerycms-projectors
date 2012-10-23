@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      projectors:
+        title: Projectors
+    projectors:
+      admin:
+        projectors:
+          actions:
+            create_new: Lag en ny Projector
+            reorder: Endre rekkefølgen på Projectors
+            reorder_done: Ferdig å endre rekkefølgen Projectors
+          records:
+            title: Projectors
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Projectors enda. Klikk på "Lag en ny Projector" for å legge til din første projector.
+          projector:
+            view_live_html: Vis hvordan denne projector ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne projector
+            delete: Fjern denne projector permanent
+      projectors:
+        show:
+          other: Andre Projectors
+  activerecord:
+    attributes:
+      'refinery/projectors/projector':
+        name: Name
+        page: Page
+        zoom: Zoom
+        position: Position

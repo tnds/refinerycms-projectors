@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      projectors:
+        title: Projectors
+    projectors:
+      admin:
+        projectors:
+          actions:
+            create_new: Maak een nieuwe Projector
+            reorder: Wijzig de volgorde van de Projectors
+            reorder_done: Klaar met het wijzingen van de volgorde van de Projectors
+          records:
+            title: Projectors
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Projectors. Druk op 'Maak een nieuwe Projector' om de eerste aan te maken.
+          projector:
+            view_live_html: Bekijk deze projector op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze projector
+            delete: Verwijder deze projector voor eeuwig
+      projectors:
+        show:
+          other: Andere Projectors
+  activerecord:
+    attributes:
+      'refinery/projectors/projector':
+        name: Name
+        page: Page
+        zoom: Zoom
+        position: Position

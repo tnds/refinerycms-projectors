@@ -1,0 +1,30 @@
+en:
+  refinery:
+    plugins:
+      projectors:
+        title: Projectors
+    projectors:
+      admin:
+        projectors:
+          actions:
+            create_new: Add New Projector
+            reorder: Reorder Projectors
+            reorder_done: Done Reordering Projectors
+          records:
+            title: Projectors
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Projectors yet. Click "Add New Projector" to add your first projector.
+          projector:
+            view_live_html: View this projector live <br/><em>(opens in a new window)</em>
+            edit: Edit this projector
+            delete: Remove this projector forever
+      projectors:
+        show:
+          other: Other Projectors
+  activerecord:
+    attributes:
+      'refinery/projectors/projector':
+        name: Name
+        page: Page
+        zoom: Zoom
+        position: Position
