@@ -16,7 +16,7 @@ module Refinery
       def show
         @projector = Projector.find(params[:id])
         @page = Refinery::Page.find_by_path(@projector.page) || Refinery::Page.first
-        if @projector.refresh then
+        if @projector.refresh and @projector.updated_at < Time.now()-@projector.interval * 1.5 then
           @projector.refresh = false
           @projector.save
         end
