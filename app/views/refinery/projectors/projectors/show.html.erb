@@ -1,23 +1,33 @@
 <div class="line-numbers">
   <% for i in 1..1000 do %>
-    <% if @projector.position == i %>
-      <span id="projector" class="line-number">&nbsp;</span>
-    <% else %>
-      <span id="line<%= i %>" class="line-number">&nbsp;</span>
-    <% end %>
+    <span id="line<%= i %>" class="line-number">&nbsp;</span>
   <% end %>
 </div>
 
 <%= content_for :stylesheets, stylesheet_link_tag('projector') %>
+<%= content_for :javascripts do %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    setInterval(function(){
+      $.ajax({
+        url:'/projectors/<%= @projector.id %>/trigger.js',
+//        url:<%#= url_for(:controller => 'projectors', :action => 'trigger', :format => 'js') %> ,
+        type: "GET",
+        dataType: "script"
+      });
+    }, <%= @projector.interval * 1000 %> );
+  });
+  $('html, body').animate({
+    scrollTop: $("#line<%= @projector.position %> ").offset().top
+  }, 500);
+</script>
+<% end %>
 <%= content_for :stylesheets do %>
   <style type="text/css">
-    body, h1, h2, h3, h4, h5, h6 {
+    div, p, span, h1, h2, h3, h4, h5, h6 {
       font-size: <%= @projector.zoom * 10 %>%;
       line-height: <%= @projector.zoom * 10 %>%;
     }
   </style>
-<% end %>
-<%= content_for :meta do %>
-  <meta http-equiv="refresh" content="5" url="<%= refinery.projectors_projector_path(@projector, :anchor => "projector")  %> " />
 <% end %>
 <%= render '/refinery/content_page' %>

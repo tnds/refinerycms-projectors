@@ -1,0 +1,7 @@
+<% if(@projector.refresh) then %>
+  location.reload();
+<% else %>
+  $('html, body').animate({
+    scrollTop: $("#line<%= @projector.position %> ").offset().top
+  }, 500);
+<% end %>

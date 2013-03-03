@@ -27,7 +27,19 @@
     <%= f.number_field :position  -%>
 
   </div>
-  
+
+  <div class='field'>
+    <%= f.label :interval -%>
+    <%= f.number_field :interval  -%>
+
+  </div>
+
+  <div class='field'>
+    <%= f.label :refresh -%>
+    <%= f.check_box :refresh  -%>
+
+  </div>
+
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
              :delete_title => t('delete', :scope => 'refinery.projectors.admin.projectors.projector'),

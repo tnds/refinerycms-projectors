@@ -3,7 +3,7 @@ module Refinery
     class Projector < Refinery::Core::BaseModel
       self.table_name = 'refinery_projectors'
 
-      attr_accessible :name, :page, :zoom, :position, :position
+      attr_accessible :name, :page, :zoom, :position, :position, :interval, :refresh
 
       acts_as_indexed :fields => [:name, :page]
 

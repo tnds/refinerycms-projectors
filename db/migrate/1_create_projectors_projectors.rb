@@ -6,7 +6,6 @@ class CreateProjectorsProjectors < ActiveRecord::Migration
       t.string :page
       t.integer :zoom
       t.integer :position
-      t.integer :position
 
       t.timestamps
     end

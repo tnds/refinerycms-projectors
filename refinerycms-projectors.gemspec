@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-projectors'
-  s.version           = '1.0'
+  s.version           = '1.1'
   s.description       = 'Ruby on Rails Projectors extension for Refinery CMS'
   s.date              = '2012-10-21'
   s.summary           = 'Projectors extension for Refinery CMS'

@@ -16,11 +16,22 @@ module Refinery
       def show
         @projector = Projector.find(params[:id])
         @page = Refinery::Page.find_by_path(@projector.page) || Refinery::Page.first
-        @delay = 3000
+        if @projector.refresh then
+          @projector.refresh = false
+          @projector.save
+        end
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @projector in the line below:
         present(@page)
+      end
+      
+      def trigger
+        @projector = Projector.find(params[:id])
+
+        respond_to do |format|
+          format.js
+        end        
       end
 
     protected

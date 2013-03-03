@@ -2,7 +2,7 @@
   <ul id="projectors">
     <% @projectors.each do |projector| %>
       <li>
-        <%= link_to projector.name, refinery.projectors_projector_path(projector, :anchor => 'projector') %>
+        <%= link_to projector.name, refinery.projectors_projector_path(projector) %>
       </li>
     <% end %>
   </ul>
